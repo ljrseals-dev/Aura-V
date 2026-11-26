@@ -1,0 +1,29 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "aura-v"
+version = "0.1.0"
+description = "AURA-V Master Integration Plan – Eval-driven vocal processing chain"
+readme = "README.md"
+requires-python = ">=3.10"
+license = {text = "Research-NonCommercial"}
+authors = [
+    {name = "Lewis Seals"}
+]
+dependencies = [
+    "numpy>=1.24",
+    "scipy>=1.10",
+]
+
+[project.optional-dependencies]
+audio = ["soundfile>=0.12"]
+dev = ["pytest>=7.0"]
+
+[project.scripts]
+aura-v-process = "scripts.process_vocal:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["aura_v*"]
